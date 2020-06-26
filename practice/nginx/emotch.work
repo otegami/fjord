@@ -1,0 +1,29 @@
+mkdir /home/otegami/public_html
+mkdir -p /home/otegami/public_html/gamagaerukun.work/{public,private,log,backup}
+
+sudo vim /home/otegami/public_html/gamagaerukun.work/public/index.html
+
+sudo vim /etc/nginx/sites-available/gamagaerukun.work
+
+server {
+           listen   80;
+           server_name www.gamagaerukun.work;
+           access_log /home/otegami/public_html/gamagaerukun.work/log/access.log;
+           error_log /home/otegami/public_html/gamagaerukun.work/log/error.log;
+           location / {
+                       root   /home/otegami/public_html/gamagaerukun.work/public/;
+                       index  index.html;
+                       }
+           }
+server {
+           listen   80;
+           server_name gamagaerukun.work;
+           access_log /home/otegami/public_html/gamagaerukun.work/log/access.log;
+           error_log /home/otegami/public_html/gamagaerukun.work/log/error.log;
+           location / {
+                       root   /home/otegami/public_html/gamagaerukun.work/public/;
+                       index  index.html;
+                       }
+           }
+
+           :q!
