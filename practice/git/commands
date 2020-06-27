@@ -1,0 +1,5 @@
+# Commands
+## git stash
+* You can save the current state.
+
+git stash pop
